@@ -1,5 +1,5 @@
-
 //business logic
+
 var playerOne = new Players(0, 0);
 
 function Players (user, total, turn) {
@@ -11,22 +11,19 @@ function Players (user, total, turn) {
 Players.prototype.rollDi = function() {
   var roll = Math.floor(Math.random()*(7-1) + 1);
   if (roll !== 1){
-  this.turn = roll + this.turn;
+  this.turn += roll;
   console.log(this.turn);
 } else if (roll === 1){
-  this.total = this.turn - this.turn;
-  console.log(this.total)
+  alert("anything")
+  this.turn = 0;
+  console.log(this.turn);
 }
 }
 
 Players.prototype.addScore = function() {
-  this.total = this.turn + this.total;
+  this.total += this.turn
   console.log(this.total);
 }
-
-// Players.prototype.endTurn = function() {
-//   if (this.turn - (this.turn + roll) === 1) {
-
 
 playerOne.rollDi();
 playerOne.addScore();
