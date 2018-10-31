@@ -1,3 +1,7 @@
 .player-two {
   display: none;
 }
+
+#dice {
+  display:none;
+}

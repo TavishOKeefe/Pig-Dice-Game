@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Pig Dice</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h4>Pig Dice Game</h4>
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pig Dice</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h4>Pig Dice Game</h4>
+    </div>
+
+    <form id="userNames">
+      <div class="form-group">
+        <label for="player-one">Player One:</label>
+        <input type="text" class="form-control" id="player-one" value="Devin">
+        <br>
+        <label for="player-two">Player Two</label>
+        <input type="text" class="form-control" id="player-two" value="Tavish">
       </div>
-      <form id="dice">
-        <div class="player-one">
-          <div class="well">
-            <p>Your current turn score is: <span id="turnRoll"></span></p>
-            <p>Your total game score is: <span id="hold-turn"></span></p>
-          </div>
-          <button class="btn btn-success" type="button" id="roll">Roll Dice</button>
-          <button class="btn btn-danger"type="button" id="hold">Hold Turn</button>
+      <button type="submit" class="btn-primary">Start Game</button>
+    </form>
+
+    <form id="dice">
+      <div class="player-one">
+        <div class="well">
+          <h3><span id="player-one-name"></span><code>Player 1</code> it's your turn!</h3>
+          <p>Your turn's current score is: <span id="turnRoll"></span></p>
+          <p>Your total game score is: <span class="hold-turn"></span></p>
+        </div>
+        <button class="btn btn-success" type="button" id="roll">Roll Dice</button>
+        <button class="btn btn-danger"type="button" id="hold">Hold Turn</button>
+        <h4><code>Player 2</code> total game score is: <span class="hold-turn2"></span></p>
         </div>
 
         <div class="player-two">
           <div class="well">
-            <p>Your current turn score is: <span id="turnRoll2"></span></p>
+            <h3><span id="player-two-name"></span><code>Player 2</code> it's your turn!</h3>
+            <p>Your turn's current score is: <span id="turnRoll2"></span></p>
             <p>Your total game score is: <span id="hold-turn2"></span></p>
           </div>
           <button class="btn btn-success" type="button" id="roll2">Roll Dice</button>
           <button class="btn btn-danger"type="button" id="hold2">Hold Turn</button>
-        </div>
+          <h4><code>Player 1</code> total game score is: <span class="hold-turn"></span></p>
+          </div>
+        </form>
       </div>
-    </form>
+
+
   </body>
   </html>
