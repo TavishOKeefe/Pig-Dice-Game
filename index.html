@@ -14,13 +14,23 @@
         <h4>Pig Dice Game</h4>
       </div>
       <form id="dice">
-        <div class="well">
-          <p id="turnRoll">
-            <!-- Display roll here -->
-          </p>
+        <div class="player-one">
+          <div class="well">
+            <p>Your current turn score is: <span id="turnRoll"></span></p>
+            <p>Your total game score is: <span id="hold-turn"></span></p>
+          </div>
+          <button class="btn btn-success" type="button" id="roll">Roll Dice</button>
+          <button class="btn btn-danger"type="button" id="hold">Hold Turn</button>
         </div>
-        <button class="btn btn-success" type="button" id="roll">Roll Dice</button>
-        <button class="btn btn-danger"type="button" id="hold">Hold Turn</button>
+
+        <div class="player-two">
+          <div class="well">
+            <p>Your current turn score is: <span id="turnRoll2"></span></p>
+            <p>Your total game score is: <span id="hold-turn2"></span></p>
+          </div>
+          <button class="btn btn-success" type="button" id="roll2">Roll Dice</button>
+          <button class="btn btn-danger"type="button" id="hold2">Hold Turn</button>
+        </div>
       </div>
     </form>
   </body>

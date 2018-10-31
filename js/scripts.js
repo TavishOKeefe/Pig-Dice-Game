@@ -1,6 +1,7 @@
 //business logic
 
-var playerOne = new Players("user");
+var playerOne = new Players("Tavish");
+var playerTwo = new Players("Devin")
 
 function Players (user) {
   this.user = user,
@@ -22,9 +23,11 @@ Players.prototype.rollDi = function() {
   console.log("reached end of roll die")
 }
 
-Players.prototype.addScore = function() {
-  this.total += this.turn
+Players.prototype.hold = function() {
+  this.total += this.turn;
   console.log(this.total);
+  this.turn = 0;
+  return this.total;
 }
 
 
@@ -32,14 +35,47 @@ Players.prototype.addScore = function() {
 //user interface logic
 
 $(document).ready(function() {
+  // Player One
   var turnRoll = $("#roll");
   var holdTurn = $("#hold");
 
   turnRoll.click(function() {
     var result = playerOne.rollDi();
+    $("#turnRoll").text(result);
     console.log(result)
     console.log(playerOne);
   });
+
+  holdTurn.click(function() {
+    var total = playerOne.hold();
+    $("#hold-turn").text(total);
+    $(".player-one").hide();
+    $(".player-two").show();
+    console.log(total)
+    console.log(playerOne);
+  });
+
+// Player Two
+
+var turnRoll2 = $("#roll2");
+var holdTurn2 = $("#hold2");
+turnRoll2.click(function() {
+  var result2 = playerTwo.rollDi();
+  $("#turnRoll2").text(result2);
+  console.log(result2)
+  console.log(playerTwo);
+});
+
+holdTurn2.click(function() {
+  var total2 = playerTwo.hold();
+  $("#hold-turn2").text(total2);
+  $(".player-two").hide();
+  $(".player-one").show();
+  console.log(total2)
+  console.log(playerTwo);
+});
+
+
 
   $("form#dice").submit(function(event){
     event.preventDefault();
