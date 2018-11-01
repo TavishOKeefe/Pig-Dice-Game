@@ -1,8 +1,15 @@
 .jumbotron {
-  background-image: url(https://cdn1.vectorstock.com/i/1000x1000/14/25/pig-with-ribbon-banner-vector-1521425.jpg);
-  height: 10px;
-  align-items: center;
+  background-image: url(https://i.imgflip.com/2cewyg.jpg);
+  /* background-attachment: fixed;
+  background-position: center; */
+  background-position: 0% 5%;
+  background-size: cover;
+  height: 400px;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  text-align: center;
 }
+
 .player-two {
   display: none;
 }
@@ -21,4 +28,16 @@
 
 body {
   background-color: #ededed;
+}
+
+.piglet1img, .piglet2img {
+  width: 100%;
+}
+.piglet2img {
+  float: right;
+}
+
+.start-game {
+  text-align: center;
+  justify-content: center;
 }

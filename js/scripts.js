@@ -38,7 +38,7 @@ $(document).ready(function() {
       $(".player-one").hide();
       $(".player-two").show();
     }
-    $("#player-one-name").text(playerOne.user)
+    $("#player-one-name").text(playerOne.user);
     $("#turnRoll").text(result);
     console.log(result);
     console.log(playerOne);
@@ -103,5 +103,18 @@ var playerTwo = null;
     $(".player-two-name").text(playerTwo.user)
     $("#dice").show();
     $("form#userNames").hide();
+  });
+
+  $("#replay").click(function(event){
+    $("#dice").hide();
+    $("form#userNames").show();
+    $(".pig").hide();
+    $("#player-one-name").text("");
+    $(".hold-turn").text("");
+    $("#turnRoll2").text("");
+    $(".hold-turn2").text("");
+    $("#player-one-name").text("");
+    $("#turnRoll").text("");
+
   });
 });
