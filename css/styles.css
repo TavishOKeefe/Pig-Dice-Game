@@ -1,3 +1,8 @@
+.jumbotron {
+  background-image: url(https://cdn1.vectorstock.com/i/1000x1000/14/25/pig-with-ribbon-banner-vector-1521425.jpg);
+  height: 10px;
+  align-items: center;
+}
 .player-two {
   display: none;
 }
@@ -8,5 +13,12 @@
 
 .pig {
   display: none;
+}
+
+.pigpic {
   height: 500px
+}
+
+body {
+  background-color: #ededed;
 }

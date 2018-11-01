@@ -38,6 +38,7 @@ $(document).ready(function() {
       $(".player-one").hide();
       $(".player-two").show();
     }
+    $("#player-one-name").text(playerOne.user)
     $("#turnRoll").text(result);
     console.log(result);
     console.log(playerOne);
@@ -46,8 +47,9 @@ $(document).ready(function() {
   holdTurn.click(function() {
     var total = playerOne.hold();
     if (total >= 20){
-      alert("You Win!");
       $(".pig").show();
+      $("#dice").hide();
+      alert("You Win!");
     }
     else {
       $(".hold-turn").text(total);
@@ -76,6 +78,8 @@ turnRoll2.click(function() {
 holdTurn2.click(function() {
   var total2 = playerTwo.hold();
   if (total2 >= 20){
+    $(".pig").show();
+    $("#dice").hide();
     alert("You Win!");
   }
   $(".hold-turn2").text(total2);
@@ -94,7 +98,9 @@ var playerTwo = null;
     var inputtedPlayerTwo = $("input#player-two").val();
     playerOne = new Players(inputtedPlayerOne);
     playerTwo = new Players(inputtedPlayerTwo);
-    $("player-one-name").text(playerTwo.user);
+    // debugger
+    $(".player-one-name").text(playerOne.user)
+    $(".player-two-name").text(playerTwo.user)
     $("#dice").show();
     $("form#userNames").hide();
   });
