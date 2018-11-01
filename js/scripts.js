@@ -1,4 +1,6 @@
 //business logic
+// var toWin = 100
+// var roll = 0
 
 function Players (user) {
   this.user = user,
@@ -10,14 +12,13 @@ Players.prototype.rollDi = function() {
   var roll = Math.floor(Math.random()*(6) + 1);
   if (roll !== 1){
   this.turn += roll;
-  console.log(this.turn);
+  console.log(roll)
 } else if (roll === 1){
-  alert("anything")
+  alert("Oh no! You rolled a 1")
   this.turn = 0;
   console.log(this.turn);
 }
   return this.turn;
-  console.log("reached end of roll die")
 }
 
 Players.prototype.hold = function() {
@@ -28,7 +29,11 @@ Players.prototype.hold = function() {
 }
 
 
-
+// Players.prototype.Win = function() {
+//   // ((this.turn + this.total) >= toWin); {
+//   //   alert("You win!");
+//   // }
+// }
 //user interface logic
 
 $(document).ready(function() {
@@ -38,8 +43,12 @@ $(document).ready(function() {
 
   turnRoll.click(function() {
     var result = playerOne.rollDi();
+    if (result === 0){
+      $(".player-one").hide();
+      $(".player-two").show();
+    }
     $("#turnRoll").text(result);
-    console.log(result)
+    console.log(result);
     console.log(playerOne);
   });
 
@@ -48,7 +57,7 @@ $(document).ready(function() {
     $(".hold-turn").text(total);
     $(".player-one").hide();
     $(".player-two").show();
-    console.log(total)
+    console.log(total);
     console.log(playerOne);
   });
 
@@ -58,8 +67,12 @@ var turnRoll2 = $("#roll2");
 var holdTurn2 = $("#hold2");
 turnRoll2.click(function() {
   var result2 = playerTwo.rollDi();
+  if (result2 === 0){
+    $(".player-two").hide();
+    $(".player-one").show();
+  }
   $("#turnRoll2").text(result2);
-  console.log(result2)
+  console.log(result2);
   console.log(playerTwo);
 });
 
