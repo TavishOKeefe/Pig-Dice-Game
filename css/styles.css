@@ -1,8 +1,6 @@
 .jumbotron {
   background-image: url(https://i.imgflip.com/2cewyg.jpg);
-  /* background-attachment: fixed;
-  background-position: center; */
-  background-position: 0% 5%;
+  background-position: 0% 1%;
   background-size: cover;
   height: 400px;
   color: white;
@@ -38,6 +36,7 @@ body {
 }
 
 .start-game {
-  text-align: center;
-  justify-content: center;
+  margin-left: 45%;
+  margin-right: 45%;
+  padding: 10px;
 }
