@@ -5,3 +5,8 @@
 #dice {
   display:none;
 }
+
+.pig {
+  display: none;
+  height: 500px
+}
